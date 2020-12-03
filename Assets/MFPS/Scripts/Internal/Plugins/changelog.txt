@@ -1,0 +1,36 @@
+-
+-
+-FIX: Can't assign reload animations for new grenades.
+-FIX: Errors after import in Unity 2018.2
+-IMPROVE: Rewrite the kit drop system, now is more advance, performed and scalable, now you can easily add new type of kits.
+-FIX: Photon Voice Network object keeps doubling each time when leaving a room.
+-IMPROVE: Now bullets are instanced from the FirePoint position instead of center of camera in FPWeapons and TPWeapons, given a more realistic shooting simulation.
+-FIX: Error that cause player death by fall in short distances in random places.
+-IMPROVE: Now remote bullets are calculated by the hit point of the local client (still reliable), that means that now just a Vector3 is sent per bullet message reducing the bandwidth of each bullet up to 60 bytes.
+-ADDON: Shop System: This is a basic shop system integrated with ULogin Pro that allow player spend their in-game coins to purchase weapons, also include the local integration for buy coins packs in game,
+-ADD: Game Mode modes enabled / disabled option in GameData -> Game Modes Available.
+-IMPROVE: Now show the complete game mode name instead of the short code in the room creation menu of the lobby.
+-CHANGE: bl_BulletSettings to BulletData.
+-CHANGE: bl_OnDamageInfo to DamageData.
+-ADDON: Weapon Pack #1, this addon is an integration of 13 weapons models from the 'Animated Hands with Weapons Pack' by Maksim Bugrimov, comes with all require info and prefabs, 
+easy to integrated in new and started projects with the new Import Weapon feature of MFPS.
+-IMPROVE: Now bl_WeaponAnimation support Animators, so you can use Mecanim animations for FPWeapons, the weapon tutorial has been update too to reflect the changes.
+-IMPROVE: Health and Ammo text are updated only when is needed instead of each frame.
+-IMPROVE: Now weapon pick ups are detected by optimized raycast instead of just by trigger collider, that mean that the player has to look at the weapon to pick up.
+-IMPROVE: Change player damage UI (blood screen) from OnGUI to UGUI.
+-CHANGE: Now bots player prefabs are assigned in GameData instead of in bl_AIManager in the scene object in order to load the prefabs asynchronous.
+-ADDON: MiniMap: A lot of improves and fixes, integration with bots and enhance performance.
+-FIX: Weapon idle movement.
+-ADD: Weapon Export and Import system, basically what this do is export a weapon from a player prefab including all settings, position, GunInfo, Network Gun, etc... 
+so you can import in other player prefabs even in different Unity projects.
+-IMPROVE: Now clamped icons (death team mates and flags icons) will hide if the menu is open.
+-FIX: Coins was not properly store when using ULogin Pro.
+-FIX: Pick up weapons from the ground doesn't update the player speed respect the weapon weight.
+-IMPROVE: Now can use Custom Animations for FPWeapon movements (Walk and Run), instead of the default procedural one.
+-ADD: 'Zoom Out' Field Of View effect when player run.
+-ADDON: ULogin Pro: add game version checking, improves and integration with Shop System addon.
+-DOC: Add replace bot model In-Editor tutorial, check in MFPS -> Tutorials -> Bots.
+-ADD: Custom sound effect when switch fire mode.
+-FIX: A problem when connection to lobby have a little delay causing Friend List throw a error in console.
+-ADDON: Level System: Now levels are update in mid game.
+-ADDON: Class Customization: Various improves and integration with the new Shop Addon.

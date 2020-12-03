@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<title>MFPS 2.0 - Version 1.4</title>
+ 	<meta name="description" content="is a advance multiplayer first person game kit for start develop your own online fps game, this kit include all the basis and some advance systems that all multiplayer shooter require, this game kit is very polished, using last Unity technologies with high efficiency and performance, great and professional UI using UGUI, player mecanim animations, you have a lot of options to customize to your taste and needed, using Photon Unity Networking as network solutions, you have 3 different game modes in the core of the kit: Free for All, Team Death Match and Capture the Flag also have 4 player classes.">
+	<meta name="author" content="Lovatto Studio">
+	<meta name="copyright" content="Lovatto Studio">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2019-03-12T00:00:00+01:00">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+	
+	<style>
+		html, body{background-color:#EEEEEE;color:#E8E8E8;background-image:url(assets/images/image_1.jpg);background-repeat:no-repeat;background-attachment:fixed;}
+		h1,h2,h3,h4,h5,h6{color:#E8E8E8;}
+		section table{background-color:#EEEEEE;}
+		::-moz-selection{background:#333636;color:#FAFA00;}
+		::selection{background:#333636;color:#FAFA00;}
+		a.brand{background-image:url();}
+		a, a:hover, a:active{color:#008C9E;}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #191919;}
+		div.navbar-inner, .navbar .nav li ul{background:#1F2121;color:#FFFFFF;}
+		a.btn-navbar{background:#1F2121;color:#FFFFFF;}
+		.navbar .nav li a{color:#FFFFFF;text-shadow:1px 1px 0px #494F4F;}
+		.navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
+		div.navbar-inner ul{}
+		.marketing-byline{color:#191919;}
+		.navbar .nav > li a{color:#FFFFFF;}
+		.navbar .nav > li a:hover, a.btn-navbar:hover{background:#333636;color:#FAFA00;}
+		.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#333636;color:#FAFA00;}
+		.navbar .nav li ul li a:hover{background:#333636;color:#FAFA00;}
+		.navbar .nav li ul li a:active{background:#333636;color:#FAFA00;}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #008C9E, #006673);
+			  background-image: -ms-linear-gradient(top, #008C9E, #006673);
+			  background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#1F2121), to(#006673));
+			  background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+			  background-image: -o-linear-gradient(top, #008C9E, #006673);
+			  background-image: linear-gradient(top, #008C9E, #006673);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+			  border-color: #006673 #006673 #bfbfbf;
+			  color:#33332E;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  background-color: #006673;
+		}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+	<link rel="stylesheet" href="assets/css/css.css" media="screen">
+
+	
+    </head>
+    
+<body class="documenter-project-mfps-20" data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
+			<a class="brand" href="#">MFPS 2.0 - Version 1.4</a>
+			<div class="nav-collapse">
+			<ul class="nav">
+					
+			<li><a href="#get_started" title="Get Started">Get Started</a></li>
+			<li><a href="#setup_pun" title="SetUp PUN">SetUp PUN</a></li>
+			<li><a href="#tags_and_layers" title="Tags and layers">Tags and layers</a></li>
+			<li><a href="#game_data" title="Game Data">Game Data</a></li>
+			<li><a href="#room_options" title="Room Options">Room Options</a></li>
+			<li><a href="#teams" title="Teams">Teams</a></li>
+			<li><a href="#lobby_chat" title="Lobby Chat">Lobby Chat</a></li>
+			<li><a href="#create_new_level" title="Create new level">Create new level</a></li>
+			<li><a href="#change_player_model" title="Change Player Model">Change Player Model</a></li>
+			<li><a href="#add_weapons" title="Add Weapons">Add Weapons</a></li>
+			<li><a href="#remote_weapons" title="Remote Weapons">Remote Weapons</a></li>
+			<li><a href="#weapon_pickup" title="Weapon PickUp">Weapon PickUp</a></li>
+			<li><a href="#hands_textures" title="Hands Textures">Hands Textures</a></li>
+			<li><a href="#player_animations" title="Player Animations">Player Animations</a></li>
+			<li><a href="#ai" title="AI">AI</a></li>
+			<li><a href="#voice_chat" title="Voice Chat">Voice Chat</a></li>
+			<li><a href="#game_staff" title="Game Staff">Game Staff</a></li>
+			<li><a href="#draw_name" title="Draw Name">Draw Name</a></li>
+			<li><a href="#bullets" title="Bullets">Bullets</a></li>
+			<li><a href="#kit_system" title="Kit System">Kit System</a></li>
+			<li><a href="#kill_zones" title="Kill Zones">Kill Zones</a></li>
+			<li><a href="#add_new_menu" title="Add new menu">Add new menu</a></li>
+			<li><a href="#friend_list" title="Friend List">Friend List</a></li>
+			<li><a href="#kick_vote" title="Kick Vote">Kick Vote</a></li>
+			<li><a href="#mobile" title="Mobile ">Mobile </a></li>
+			<li><a href="#language" title="Language">Language</a></li>
+			<li><a href="#postprocessing" title="PostProcessing">PostProcessing</a></li>
+			<li><a href="#add_ons" title="Add ons">Add ons</a></li>
+			<li><a href="#faq" title="FAQ">FAQ</a></li>
+			<li><a href="#contact" title="Contact">Contact</a></li>
+
+			</ul>
+			</div>
+		</div>
+	</div>
+</div> <!-- End of Navbar -->
+
+<!-- Main Container Beginning -->			
+			
+<div class="container" id="documenter_content">
+    
+	<div id="documenter-cover">
+	<div class="masthead">
+	    <h1>MFPS 2.0 - Version 1.4</h1>
+	    <p>is a advance multiplayer first person game kit for start develop your own online fps game, this kit include all the basis and some advance systems that all multiplayer shooter require, this game kit is very polished, using last Unity technologies with high efficiency and performance, great and professional UI using UGUI, player mecanim animations, you have a lot of options to customize to your taste and needed, using Photon Unity Networking as network solutions, you have 3 different game modes in the core of the kit: Free for All, Team Death Match and Capture the Flag also have 4 player classes.</p>
+	    <ul class="marketing-byline">
+			
+			<li>latest update: 03/12/2019</li>
+			<li>by: Lovatto Studio</li>
+			<li><a href=""></a></li>
+		</ul>
+	    <p class="download-info">
+			<a href="http://www.lovattostudio.com/forum/index.php" class="btn btn-primary btn-large">Forum</a> <a href="https://www.lovattostudio.com/en/shop/" class="btn btn-large">Addons</a> 
+		</p>
+		
+	</div> <!-- masthead -->
+	
+   <div id="intro">
+    <p class="highlight hero-unit">if you have purchase MFPS 2.0 from Lovatto Studio web site store, please contact to lovatto in the forum with your account and order number for you can be added to the group and you can download updates and receive support.</p>
+   </div> <!-- intro -->
+   
+	</div>
+      
+  <section id="get_started">
+	<div class="page-header"><h3>Get Started</h3><hr class="notop"></div>
+<h2>
+	<strong>Require:</strong></h2>
+<p>
+	Unity3D 5.6++</p>
+<p>
+	Photon PUN 2 v2.7++</p>
+<p>
+	&nbsp;</p>
+<h2>
+	<strong>Started steps:</strong></h2>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Video:</strong></p>
+<p>
+	<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="720" src="https://www.youtube.com/embed/i6qfVKk0TqY" width="1280"></iframe></p>
+<p>
+	&nbsp;</p>
+<p>
+	- Download and Import&nbsp;<a href="https://assetstore.unity.com/packages/tools/network/pun-2-free-119922">https://assetstore.unity.com/packages/tools/network/pun-2-free-119922</a></p>
+<p>
+	- Setup Photon PUN (see section)</p>
+<p>
+	- Import MFPS 2.0 package</p>
+<p>
+	- Add tags and layers.</p>
+<p>
+	- Add scenes in build settings.</p>
+<p>
+	- Ready to make next gen FPS!</p>
+</section>
+<section id="setup_pun">
+	<div class="page-header"><h3>SetUp PUN</h3><hr class="notop"></div>
+<header style="box-sizing: border-box; color: rgb(255, 255, 255); font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 15px;">
+	<h1 id="how_to_obtain_your_app_id" style="box-sizing: border-box; margin: 60px 0px 30px; font-size: 39px; font-family: inherit; font-weight: 400; line-height: 1.1; color: inherit;">
+		How to Obtain Your App ID</h1>
+</header>
+<section style="box-sizing: border-box; color: rgb(255, 255, 255); font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 15px;">
+	<h3 id="step_1__register_a_photon_cloud_account" style="box-sizing: border-box; font-family: inherit; font-weight: 400; line-height: 1.1; color: inherit; margin-top: 60px; margin-bottom: 30px; font-size: 26px;">
+		Step 1: Register a Photon Cloud Account</h3>
+	<p style="box-sizing: border-box; margin: 0px 0px 12px;">
+		Simply go&nbsp;<a href="https://www.photonengine.com/en-us/account/signup" style="box-sizing: border-box; background-color: transparent; border-bottom: 1px solid rgb(175, 178, 181); cursor: pointer; text-decoration-line: none !important;">to our site</a>&nbsp;and submit your e-mail-address. After signup is completed you will have the &quot;Free Plan&quot;, which is an app with a maximum of 20 CCU.</p>
+	<p style="box-sizing: border-box; margin: 0px 0px 12px;">
+		&nbsp;</p>
+	<figure style="box-sizing: border-box; margin: 40px 0px; text-align: center;">
+		<img alt="Photon Cloud Screenshot: Signup" class="no-border" src="assets/images/image_4.png" style="box-sizing: border-box; border: none; vertical-align: middle; max-width: 100%;"><figcaption style="box-sizing: border-box; font-style: italic;">Photon Cloud Screenshot: Signup</figcaption></figure>
+	<p style="box-sizing: border-box; margin: 0px 0px 12px;">
+		&nbsp;</p>
+	<p style="box-sizing: border-box; margin: 0px 0px 12px;">
+		<span style="box-sizing: border-box; font-weight: 700;">Already have an account?</span>&nbsp;You can directly proceed to the next step ...</p>
+	<h3 id="step_2__get_your_photon_cloud_appid" style="box-sizing: border-box; font-family: inherit; font-weight: 400; line-height: 1.1; color: inherit; margin-top: 60px; margin-bottom: 30px; font-size: 26px;">
+		Step 2: Get your Photon Cloud AppId</h3>
+	<p style="box-sizing: border-box; margin: 0px 0px 12px;">
+		The Cloud AppId is a generated identifier for your Photon Cloud application. It&#39;s used when an application client connects and separates your users from anyone else.</p>
+	<p style="box-sizing: border-box; margin: 0px 0px 12px;">
+		Get it from your&nbsp;<a href="https://www.photonengine.com/en-us/dashboard" style="box-sizing: border-box; background-color: transparent; border-bottom: 1px solid rgb(175, 178, 181); cursor: pointer; text-decoration-line: none !important;">application dashboard</a>. You need to click on the AppID value to unhide it and select it.</p>
+	<p style="box-sizing: border-box; margin: 0px 0px 12px;">
+		&nbsp;</p>
+	<figure style="box-sizing: border-box; margin: 40px 0px; text-align: center;">
+		<img alt="Photon Cloud Screenshot: Application List ApplicationID" class="no-border" src="assets/images/image_3.png" style="box-sizing: border-box; border: none; vertical-align: middle; max-width: 100%;"><figcaption style="box-sizing: border-box; font-style: italic;">Photon Cloud Screenshot: Application List ApplicationID</figcaption></figure>
+	<p style="box-sizing: border-box; margin: 0px 0px 12px;">
+		&nbsp;</p>
+	<h3 id="step_3__paste_your_app_id_in_your_game_code" style="box-sizing: border-box; font-family: inherit; font-weight: 400; line-height: 1.1; color: inherit; margin-top: 60px; margin-bottom: 30px; font-size: 26px;">
+		Step 3: Paste your App ID in your game code</h3>
+	<p style="box-sizing: border-box; margin: 0px 0px 12px;">
+		Once you have your own Cloud AppId, you can use it to connect to Photon Cloud and your application.</p>
+</section>
+</section>
+<section id="tags_and_layers">
+	<div class="page-header"><h3>Tags and layers</h3><hr class="notop"></div>
+<p>	After import Photon PUN and MFPS packages, you need assign the require tags and layers, you simple need go to:</p>
+<p>	MFPS -&gt; Tools -&gt; Tags And Layers</p>
+<p>	<img alt="" src="assets/images/image_35.png" style="width: 357px; height: 132px;"></p>
+<p>	after click this a button will appear, simple click it and ready!</p>
+</section>
+<section id="game_data">
+	<div class="page-header"><h3>Game Data</h3><hr class="notop"></div>
+<p>	MFPS 2.0 have a scriptable object that store some basic options for each developer can set up the game to they neededs and taste, here explain for what is and what does some of options that are on the data (due some the name are self explained):</p>
+<p>	- You can find the &quot;GameData&quot; in the MFPS Resources folder:</p>
+<p>	<img alt="" src="assets/images/image_7.png" style="width: 700px; height: 397px;"></p>
+<p>	- Score Per Kill: Amount of score that give to a player that reach a enemy kill.</p>
+<p>	- HeadShotScoreBonus: Amount of score that give to a player that reach a enemy kill by Head Shot.</p>
+<p>	- Self Grenade Damage: can player get damage by his own grenade?</p>
+<p>	- Bullet Tracer: show a tracer effect on bullets? for optimization is not recommend active this.</p>
+<p>	- Drop Gun On Death: players drop the gun when die for other players can pick up it?</p>
+<p>	- Can Change Team: players can change team in middle of match?</p>
+<p>	- Kill Cam static: stick the kill cam camera to the head player or use orbit kill cam?</p>
+</section>
+<section id="room_options">
+	<div class="page-header"><h3>Room Options</h3><hr class="notop"></div>
+<p>	When player host a room has several options to customize it like: Max Player, Game Mode, Round Time,etc..&nbsp; &nbsp; &nbsp; you can set up these available options:</p>
+<p>	- Open&nbsp; &#39;MainMenu&#39; Scene and in &#39;bl_Lobby&#39; script you will see the &#39;Room Options&#39; sections:</p>
+<p>	<img alt="" src="assets/images/image_26.png" style="width: 480px; height: 389px;"></p>
+<p>	in these list are the availble options for customize a new room:</p>
+<p>	<strong>Max Player:</strong> The maximun players that can join to the room, in a team base game mode the max player per team is the half of the max player selected example Max Player = 8 = 4 vs 4 team.</p>
+<p>	<strong>Room Time:</strong> The time per round in seconds.</p>
+<p>	<strong>Room Kills:</strong> The Max kills to reached per match.</p>
+<p>	<strong>Max Ping:</strong> The maximun ping that a player can have to join or stay in the room.</p>
+</section>
+<section id="teams">
+	<div class="page-header"><h3>Teams</h3><hr class="notop"></div>
+<p>
+	On MFPS there are various game modes that use Team systems like CTF (Capture the Flag) or TDM (Team Death Match) for default these teams are &quot;Delta&quot; and &quot;Recon&quot; you can modify these team name and representative color, for do it go to &quot;Game Data&quot; in find the &quot;Team&quot; section:</p>
+<p>
+	<img alt="" src="assets/images/image_33.png" style="width: 492px; height: 419px;"></p>
+<p>
+	here you can change the Team Name and Colors.</p>
+</section>
+<section id="lobby_chat">
+	<div class="page-header"><h3>Lobby Chat</h3><hr class="notop"></div>
+<p>	MFPS 2.0 include a lobby chat system, for players can communicate between mean search or wait for join to a room, this chat use Photon Chat plugin, for use it you need have a Photon Chat AppID (it&#39;s not the same that Photon PUN AppID), you can get this appid from your photon dashboard:</p>
+<p>	<span style="color: rgb(24, 25, 26); font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 15px;">Get your AppId from&nbsp;</span><a href="https://www.photonengine.com/en-us/dashboard" style="box-sizing: border-box; border-bottom: 1px solid rgb(175, 178, 181); cursor: pointer; font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 15px; text-decoration-line: none !important;">the Chat Dashboard</a><span style="color: rgb(24, 25, 26); font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 15px;">&nbsp;after&nbsp;</span><a class="btn btn-warning" href="https://www.photonengine.com/en-us/account/signup" style="box-sizing: border-box; background-color: rgb(240, 173, 78); border: 3px solid rgb(238, 162, 54); cursor: pointer; display: inline-block; padding: 6px 12px; margin-bottom: 0px; font-size: 14px; font-weight: 600; line-height: 1.42857; text-align: center; white-space: nowrap; vertical-align: inherit; touch-action: manipulation; user-select: none; background-image: none; border-radius: 0px; -webkit-text-stroke-color: initial; font-family: Roboto, Helvetica, Arial, sans-serif; color: rgb(255, 255, 255) !important; text-decoration-line: none !important;">free signup</a><span style="color: rgb(24, 25, 26); font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 15px;">&nbsp;.</span></p>
+<p>	<span style="color: rgb(24, 25, 26); font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 15px;">when you have your Chat AppID, assign it on the&nbsp;</span>PhotonServerSettings:</p>
+<p>	<img alt="" src="assets/images/image_17.png" style="width: 700px; height: 231px;">&nbsp;<span style="color: rgb(24, 25, 26); font-family: Roboto, Helvetica, Arial, sans-serif; font-size: 15px;">ID also be sure that you have &quot;UseLobbyChat&quot; enable on &quot;GameData&quot; (in MFPS Resources folder).</span></p>
+</section>
+<section id="create_new_level">
+	<div class="page-header"><h3>Create new level</h3><hr class="notop"></div>
+<p>
+	&nbsp;</p>
+<p>
+	If you want add a map / scene for play, this is really simply, you only need add some prefabs to your ready made design map.</p>
+<p>
+	<strong>Video tutorial:</strong>&nbsp;<a href="https://www.youtube.com/watch?v=XabR4NGgJRI&amp;t=191s">https://www.youtube.com/watch?v=XabR4NGgJRI&amp;t=191s</a></p>
+<p>
+	<strong>1 - Design your level</strong></p>
+<p>
+	- You can create a new scene and design the level or if you already have a map done simple create a prefab of it,&nbsp;</p>
+<p>
+	add all the require object as child of 1 parent for make only 1 prefab, example: create a new GameObject in hierarchy called &quot;Environment&quot; and put inside it all other models, prefabs, lights, etc... and make a prefab of it.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>2 - Duplicate example level</strong></p>
+<p>
+	This is a simple way to create a new level to work with MFPS, instead of add all the MFPS 2.0 in your scene map, simple add your design map to a duplicate working scene of MFPS, for this go to (Project View): MFPS -&gt; Scenes -&gt; ExampleLevel&nbsp;- duplicate this, select the scene in project view and press Ctrl + D (on windows), open the new duplicate scene &quot;ExampleLevel 1&quot;.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>3 - Add you map prefab</strong></p>
+<p>
+	In the new scene (duplicated) delete the game object called &quot;Environment&quot;:</p>
+<p>
+	<img alt="" src="assets/images/image_8.png" style="width: 487px; height: 159px;"></p>
+<p>
+	and add your map design prefab that you create before.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>4 - Create Spawn Points</strong></p>
+<p>
+	After you add you map you will need also create&nbsp; spawn points and move some things, for create spawn point simple create a new game object in hierarchy:</p>
+<p>
+	<img alt="" src="assets/images/image_25.png" style="width: 258px; height: 379px;"></p>
+<p>
+	and add &quot;bl_SpawnPoint&quot; script on it:</p>
+<p>
+	<img alt="" src="assets/images/image_12.png" style="width: 490px; height: 214px;"></p>
+<p>
+	positioned that spawn point in your map and assign for what team is:</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<img alt="" src="assets/images/image_10.png" style="width: 1615px; height: 677px;"></p>
+<p>
+	5 - Save the scene</p>
+<p>
+	After you finish with the spawn points, save the scene and add it to the &#39;Build Settings&#39;, then go to &#39;MainMenu&#39; scene and in Lobby -&gt; bl_Lobby script in the &#39;Level Manager&#39; section you will see a list, add a new field on this list and&nbsp; fill the info:</p>
+<p>
+	<strong>Name:</strong> The name to display in room list this can be wherever you want called it.</p>
+<p>
+	<strong>SceneName:</strong> This is the real name of scene, the same as apear in build settings, this is internal use only.</p>
+<p>
+	<strong>Preview:</strong> a sprite preview of map.</p>
+<p>
+	<img alt="" src="assets/images/image_16.png" style="width: 479px; height: 436px;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	6 - Finally you need bake a &quot;<strong>Navmesh</strong>&quot; for this scene in order to the bots can move around the map, if you don&#39;t know how to do it, check the offical unity tutorial:</p>
+<p>
+	<a href="https://docs.unity3d.com/Manual/nav-BuildingNavMesh.html">https://docs.unity3d.com/Manual/nav-BuildingNavMesh.html</a></p>
+</section>
+<section id="change_player_model">
+	<div class="page-header"><h3>Change Player Model</h3><hr class="notop"></div>
+<div class="alert">
+	<strong>NOTE</strong>: since version 1.4 a new tool for add new players has been added, that make this video tutorial deprecated.</div>
+<p>
+	in order to see the new tutorial go to (In Editor)<em>MFPS -&gt; Tutorials -&gt; Add Player</em>.</p>
+<p>
+	<strong>Video tutorial:</strong>&nbsp;<a href="https://www.youtube.com/watch?v=zbkqIf_eux0&amp;t=1s">https://www.youtube.com/watch?v=zbkqIf_eux0&amp;t=1s</a></p>
+<p>
+	<strong>Require:&nbsp;</strong></p>
+<p>
+	Rigged player model</p>
+<p>
+	Model and Animations set as Humanoid</p>
+<p>
+	Ragdoll prefab of the player model.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Notes</strong>:</p>
+<p>
+	Since Beta 5 player prefabs are assigned in &#39;GameData&#39; (in Resources folder) instead of bl_GameManager.</p>
+</section>
+<section id="add_weapons">
+	<div class="page-header"><h3>Add Weapons</h3><hr class="notop"></div>
+<p>
+	If you want add a new weapons:</p>
+<div class="alert">
+	<strong>NOTE</strong>: Since version 1.4 of MFPS there is a new&nbsp; in editor tutorial for add weapons, check (in Editor)<em>MFPS -&gt; Tutorials -&gt; Add Weapon</em>.</div>
+<h2>
+	1 - Create the weapon info:</h2>
+<p>
+	<img alt="" src="assets/images/image_34.png" style="width: 747px; height: 846px;"></p>
+<p>
+	- Go to GameData (in Resources folder) in &quot;Weapons&quot; section is a list called &quot;All Weapons&quot;, Add a new field to this list</p>
+<p>
+	and filled the information of this new weapons Where:</p>
+<p>
+	Name = The name that will be show in UI and kill feed.</p>
+<p>
+	Type = what type of weapon is this?</p>
+<p>
+	Settings = the statistics of weapon</p>
+<p>
+	PickUp Prefab = the weapon that will be throwed when pick up other gun, you should create this.</p>
+<p>
+	Gun Icon = the icon of this weapon.</p>
+<p>
+	&nbsp;</p>
+<h2>
+	<strong>2 - Add the weapon to the player</strong></h2>
+<p>
+	- Now that we have the info of new weapon, we need add the weapon model to the players, for it drag one of player prefabs (from Resources folder, note that you need do this for each player prefabs) in hierarchy, open it and go to <em>MPlayer -&gt; Heat -&gt; Mouse -&gt; Animation -&gt; Main Camer -&gt; Weapon Camera -&gt; TilEffect -&gt; WeaponManger -&gt; *</em> here you will see all the weapons (as children of Weapon Manager), duplicate one of these as recomendation duplicate one of the same type of weapons that is your new weapons example if your new weapons is a rifle duplicate the rifle so save a litle work.</p>
+<p>
+	<img alt="" src="assets/images/image_9.png" style="width: 965px; height: 911px;"></p>
+<p>
+	in the new duplicated weapon change the information of bl_Gun script attached:</p>
+<p>
+	&nbsp;<strong>Gun ID</strong> = select the name of new gun that you created before (note that this list is not the same as the weapon type, is the list of weapon info from GameData)</p>
+<p>
+	<strong>Aim Position</strong> = <em>(do this after add the new model)</em> for get this you need move the new weapon (Rifle (1) in the image) from editor and put right in the center copy the position from inspector and paste in bl_Gun then set the weapon again to the default position.</p>
+<p>
+	<strong>FirePoint </strong>= Create a new Game Object under the new weapon and put it exactly in the front of barrel of weapon (is not require if the weapon is a knife) and put this new object in the &quot;Fire Point&quot; variable.</p>
+<p>
+	<strong>SoundsReloadByAnimation </strong>= set true only if you play the sounds by animation event, set false if you want assign the sounds by script.</p>
+<p>
+	&nbsp;</p>
+<h2>
+	<strong>3 - Change Weapon Model</strong></h2>
+<p>
+	Now we need replace the weapon model, due the duplicated still contain the model of duplicated weapons we need delect this but before delecte we need save the muzzle flash, click in the muzzleflash in bl_Gun and drag out side of weapon model that we will delete, then delect the model.</p>
+<p>
+	<img alt="" src="[img]assets/images/image_5.gif[/img]"></p>
+<p>
+	<img alt="" src="assets/images/image_5.gif"></p>
+<p>
+	&nbsp;</p>
+<p>
+	- Now drag you new weapon model under the the new weapon object (Rifle (1)), be sure that your new model is market as Legacy mode in Animartion type, reset the position of model under the parent (Rifle (1)) to be position = 0,0,0 and rotation = 0,0,0.</p>
+<p>
+	- Now move the Rifle (1) (not the model) to be in front of camera where you want to the default position will be.</p>
+<p>
+	- in the new model under Rifle (1) (where Animation component is attached) add these scripts: bl_WeaponAnim.cs and bl_WeaponMovement.cs:</p>
+<p>
+	<img alt="" src="assets/images/image_30.png" style="width: 976px; height: 927px;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	- Now in bl_WeaponMovement we need add the position and rotation that the weapon will lerp when the player run, fot this we need do the same as we obtain the position for Aim but the difference is that now we need move the model (where bl_WeaponMovement is attached) and not the parent (where bl_Gun is attached).</p>
+<p>
+	so simple positioned the weapon model in the position and rotation that will be when player run, then copy the position and rotation and paste in the respective varaiable: position = Move To, Rotation = Rotate To, then simple set again the weapon model to position = 0,0,0 and rotation to 0,0,0.</p>
+<p>
+	Finally set the MuzzleFlash and Cartrige particles under the weapon model, be sure that none of bl_Gun is missing, also change the &quot;Rifle (1)&quot; place holder name to your custom name.</p>
+<p>
+	&nbsp;</p>
+<h2>
+	4 - Listed Weapon in Weapon Manager</h2>
+<p>
+	- For finish the integration we need listed this new weapon (bl_Gun) in the &quot;All Weapon&quot; list of bl_GunManager.cs: simple go to WeaponManager -&gt; bl_GunManager -&gt; AllWeapons -&gt;&nbsp; in this list add a new field and add the new weapon.</p>
+<p>
+	- Now assign the weapon to one of the four player clases, simple set the index of new weapon in AllWeapons list in one of four slots of one of these classes:</p>
+<p>
+	<img alt="" src="assets/images/image_32.gif"></p>
+<p>
+	Now you have a new weapon!</p>
+</section>
+<section id="remote_weapons">
+	<div class="page-header"><h3>Remote Weapons</h3><hr class="notop"></div>
+<p>	When you add a new weapon to a player you also set the model that show in the hands of player model, as FPS game there are two weapons views:</p>
+<p>	1 - Which the local player see the &#39;First Person Weapon&#39;</p>
+<p>	2 - Which other players see in the player model hands &#39;Third Person Weapon&#39;.</p>
+<p>	&nbsp;</p>
+<p>	This tutorial is for how add the second one &#39;Third Person Weapon&#39; after you already add the First person one.</p>
+<p>	&nbsp;</p>
+<p>	- You need the same weapon model as in the First person view but without the hands model, just the weapon mesh.</p>
+<p>	- Go to the &#39;RemoteGuns&#39; game object (in hierarchy) that is located under the <strong>Right Hand </strong>bone of player model and put the new weapon mesh under this:<img alt="" src="assets/images/image_37.gif"></p>
+<p>	- Now positioned the weapon right as you want to look in the hands of player mode:</p>
+<p>	<img alt="" src="assets/images/image_39.gif"></p>
+<p>	now in the new weapon model add the script &#39;<strong>bl_NetworkGun.cs</strong>&#39;, now you will see that appear a field called &quot;<strong>Local Weapon</strong>&quot; in this field you need drag the &#39;First Person Weapon&#39; of this gun, the one that you should have added before from the &#39;<strong>Add Weapon</strong>&#39; tutorial:</p>
+<p>	<img alt="" src="assets/images/image_20.png" style="width: 758px; height: 719px;"></p>
+<p>	- Now depend of type of weapon a few new variables will appear,</p>
+<p>	<strong>Bullet:</strong> (Optional) here you can add a bullet to override the local one, if you leave null the bullet from the First Person Weapon will be used.</p>
+<p>	<strong>MuzzleFlash:&nbsp;</strong>here the particle system (not prefab) that will play when weapon fire is called, the particle system should be under the weapon mesh.</p>
+<p>	<strong>Left Hand Position:</strong> from version 1.1 left hand position is controlled by IK to achieve a better effect and more realistic kinematic, for use this feature you simple need set up the position:</p>
+<p>	&nbsp;- in the bl_NetworkGun script click on the button &quot;SetUp Hand IK&quot; or &quot;Edit Hand Position&quot;, after click this will automatically select a object and the player IK will start run in editor, so all what you need to do is positioned the selected object to the position where will be in the barrel of the weapon:</p>
+<p>	<img alt="" src="assets/images/image_18.gif"></p>
+<p>	After you finish you need close the IK runner window, simple click on the button of the little window and ready.</p>
+<p>	<img alt="" src="assets/images/image_28.png" style="width: 201px; height: 74px;"></p>
+<p>	- Now you need add this weapon to the Network weapon list, add a new field in the list<strong> &#39;Network Guns&#39;</strong> of <em>bl_PlayerSync.cs</em> and drag the weapon here:</p>
+<p>	<img alt="" src="assets/images/image_38.gif" style="width: 793px; height: 650px;"></p>
+<p>	Ready!</p>
+</section>
+<section id="weapon_pickup">
+	<div class="page-header"><h3>Weapon PickUp</h3><hr class="notop"></div>
+<p>	After add a local and remote weapon you also need create a prefab which will throw when die or that can be pick up:</p>
+<p>	- as Third Person Weapon you only need the weapon mesh without the hand model</p>
+<p>	- Add the script bl_GunPickUp.cs and select the correct &#39;Gun ID&#39;, in the info set the default ammo that this weapon contain.</p>
+<p>	- Add also a Sphere Collider as <strong>Trigger </strong>and a Box Colider (<strong>Trigger as false</strong>), the Box Collider should fit the weapon bounds limits and the Sphere Collider Trigger represent the are where players will detect this weapon for pick up.</p>
+<p>	- Now set the Layer of this as <strong>&#39;Ignore Raycast&#39;&nbsp;</strong>and create a prefab of this:</p>
+<p>	<img alt="" src="assets/images/image_13.png" style="width: 1661px; height: 591px;"></p>
+<p>	- Finally go to the weapon info of this gun in &#39;GameData&#39; and assign the prefab to the pick up field:</p>
+<p>	<img alt="" src="assets/images/image_11.png" style="width: 488px; height: 526px;"></p>
+<p>	- Ready!.</p>
+</section>
+<section id="hands_textures">
+	<div class="page-header"><h3>Hands Textures</h3><hr class="notop"></div>
+<p>	Normally the player model of each team have different texture and also the first person hands have different textures, so for this there are a easy method in MFPS for you don&#39;t need apply that texture in each weapon for each player, what you only need is that all weapons for each player shared the same hands material.</p>
+<p>	so then you need do this:</p>
+<p>	&nbsp;</p>
+<p>	1 -&nbsp; go to the player prefab -&gt; bl_PlayerSettings -&gt; Hands -&gt;&nbsp;</p>
+<p>	<img alt="" src="assets/images/image_15.png" style="width: 495px; height: 743px;"></p>
+<p>	here you need set the material for hands and sleves (if needed) and also the texture for each player hand,</p>
+<p>	in the bottom are a option &#39;Use Effect&#39; this enable a blinking effect after player spawn for 5 seconds, the colors are between the blink effect will do.</p>
+<p>	&nbsp;</p>
+</section>
+<section id="player_animations">
+	<div class="page-header"><h3>Player Animations</h3><hr class="notop"></div>
+<p>	MFPS 2.0 use Mecanim for player animation so change animations clips is really simple as drag and drop, you only need a humanoid animation clip and the assign in the Animator controller:</p>
+<p>	1 - Locate the required animation</p>
+<p>	- First to all you need find the animation that you want replace, example you want change the &quot;Rifle Reload&quot; animation,</p>
+<p>	you need find it in the player Animator Controller tree view, go to (Project View) MFPS -&gt; Content -&gt; Art -&gt; Animations -&gt; Player -&gt;&nbsp;<img alt="" src="assets/images/image_6.png" style="width: 481px; height: 293px;"></p>
+<p>	With the Animator Controller select, open the Animator Window (Window -&gt; Animator), on the Animator view you need figure for what part of player body is this animations Bottom or Up body (Lens or Arms), example &quot;Rifle Reload&quot; is for Arms so is for Upper Body, go to &quot;Layers&quot; - and select &quot;Upper&quot; layer, there you will see various state machine with the name of the weapon to which it belongs, select the weapon:</p>
+<p>	<img alt="" src="assets/images/image_27.png" style="width: 944px; height: 429px;">double click on the state machine &quot;Rifle&quot; and you will see other states that represent the weapon state, as this example we are looking for &quot;Reload&quot; state, select the Reload state and in the inspector view you will see the settings of this state&nbsp;specifically the &quot;Motion&quot; field, in this we need drag / replace the animation clip with the new one:</p>
+<p>	<img alt="" src="assets/images/image_14.png" style="width: 1445px; height: 325px;">ready, you have replace the animation, for all other animations is the same steps, you also can play with other settings of states like speed, trasittion time, etc... you may need have basic knowledge of Mecanim for not break the tree system.</p>
+</section>
+<section id="ai">
+	<div class="page-header"><h3>AI</h3><hr class="notop"></div>
+<p>
+	In version 1.1 we introduce a AI agent with shooter behaviour, we this player can play a match with bots and other players, this is essential when there are not enough real players.</p>
+<p>
+	the AI is synchronize over network, can kill real players and other bots as well, they can fire with rifle and throw grenades to the target, also there is a simple but useful &#39;Safe Point / Cover Point&#39; system, that help bots cover in certain situations.</p>
+<h2>
+	How to play:</h2>
+<p>
+	- At the moment the party with bots is only available on FFA mode, when you select the FFA game mode in the lobby a toggle called &quot;with bots&quot; will appear, select this to add bots to the match or not.</p>
+<p>
+	&nbsp;</p>
+<h2>
+	Number of Bots:</h2>
+<p>
+	- for default an party have 6 bots as maximun but you can add or remove some, for change this simple go to MFPS -&gt; Content -&gt; Prefabs -&gt; GamePlay -&gt; AIManager -&gt; this prefab have attached a bl_AIManager script, in this script you can chnage the maximun bots per party in the variable &quot;Number Of Bots&quot;.</p>
+<p>
+	&nbsp;</p>
+<h2>
+	Cover / Safe Points:</h2>
+<p>
+	- The AI system count with a simple safe point system, basically this is use for bots to get reference points of where cover in certain situations like when is ramdon walking and get hit by a unkwowing enemy, these points are transforms that you positioned over the map manually.</p>
+<p>
+	&nbsp;</p>
+<h2>
+	Add Cover Points:</h2>
+<p>
+	- The example level have various AI cover points but when you add a new map, these will be&nbsp;incorrect positions, so you will need to re-positioned it, or if you want add or remove a cover point:</p>
+<p>
+	Go to the AIManager object in the hierarchy (of the map scene), under this you will see alot of childers called &quot;CoverPoint&quot; so if you want change the positioned just move the transform, you can active the gizmos draw on bl_AICoverPointManager (on AIManager) -&gt; Show Gizmos, if you want a new cover point simple duplicate one of these transforms and ready!</p>
+</section>
+<section id="voice_chat">
+	<div class="page-header"><h3>Voice Chat</h3><hr class="notop"></div>
+<p>
+	From version Beta 6, MFPS 2.0 support Photon Voice for enable team voice chat, for enabling this feature you need a third party plugin <a href="https://www.assetstore.unity3d.com/en/#!/content/45848">Photon Voice</a>, you can download for free from Asset Store.</p>
+<p>
+	When you have imported it like PUN you need a &#39;App Id&#39; for it, you can get it from your Photon account, more info here:&nbsp;<a href="https://doc.photonengine.com/en-us/voice/current/getting-started/voice-for-pun">https://doc.photonengine.com/en-us/voice/current/getting-started/voice-for-pun</a></p>
+<p>
+	After this the feature will be available in game, for default the &#39;<strong>Auto voice detection</strong>&#39; is enable, players can set &#39;<strong>Push to talk</strong>&#39; in the setting menu in game, also can mute the voice chat.</p>
+<p>
+	For <strong>change the icon</strong> that appear in remote players when this is trasmitting voice, you can do it in bl_DrawName.cs in the player prefabs.</p>
+<p>
+	&nbsp;</p>
+<h2>
+	WebGL</h2>
+<p>
+	-Due Photon Voice use only UDP, it <strong>can&#39;t be use in WebGL platform</strong> (cuz Web Sockets), and due the asset store pack already have the Photon Voice package if you want export to this platform you need delete the folder &quot;<strong>PUNVoice</strong>&quot;, if you delete this folder and you are not in WebGL in build settings you can get some script compile errors, you fix these switching to WebGL platform.</p>
+</section>
+<section id="game_staff">
+	<div class="page-header"><h3>Game Staff</h3><hr class="notop"></div>
+<p>	you may want to highlight working game development members with a badge on their behalf for example &quot;Lovatto [Admin]&quot; with a different color that normal players, so other users can see that is a staff member on the game, on MFPS 2.0 there are a simple way to do this and you can set up right on the inspector.</p>
+<p>	&nbsp;</p>
+<p>	Go to Game Data and find the &quot;Game Team&quot; section:</p>
+<p>	<img alt="" src="assets/images/image_23.png" style="width: 492px; height: 667px;"></p>
+<p>	in this list you can add much member as you want, with a simple settings to set up:</p>
+<p>	UserName: the name that the staff member need writte to access to this account.</p>
+<p>	Role: The staff rank / role on the team.</p>
+<p>	Password: when try to sing in with this account name a password window will appear to writte the password (with other names will not appear), so normal player can&#39;t fake identity.</p>
+<p>	Color: The color with the name text will appear in the game.</p>
+</section>
+<section id="draw_name">
+	<div class="page-header"><h3>Draw Name</h3><hr class="notop"></div>
+<p>	In MFPS the player name show to other team players above the head of our player, a simple text, but you can modify the style of this, like color, font, position offset, size,etc...</p>
+<p>	simple go to the player prefab (in Resources folder) and on the root object in the script bl_DrawName there are a GUIStyle field called &quot;Skin&quot; if you open this you will see all the gui style options:<img alt="" src="assets/images/image_36.png" style="width: 500px; height: 271px;"></p>
+<p>	here you can change the font, text color, size,etc...</p>
+<p>	for change the position offset you can do it in the variable called &quot;Content Offset&quot; but for see the result you can do it in run time (with other player from a build and you see from the editor).</p>
+<p>	&nbsp;</p>
+<h2>
+	Health Bar.</h2>
+<p>	From version r1.0 you can show a health bar above the team mate players, all the logic of this is in <em>bl_DrawName.cs </em>script attached to the player prefabs (above screenshoot), from the inspector of this script you can change the Bar Texture, height and color.</p>
+<p>	but if you don&#39;t want to show this health bar you can disable in <strong>GameData </strong>-&gt; ShowTeamMateHealthBar</p>
+</section>
+<section id="bullets">
+	<div class="page-header"><h3>Bullets</h3><hr class="notop"></div>
+<p>
+	in MFPS bullets are pooled and like all other pooled objects they are listed in <strong>bl_ObjectPooling </strong>script in the GameManager,</p>
+<p>
+	so in bl_Gun you assign only the &quot;Pooled Name&quot;.</p>
+<p>
+	&nbsp;</p>
+<p>
+	You may want to add a new bullet for a spesific weapon, let&#39;s say you want add a different Trail Render, well for do it you can do this:</p>
+<p>
+	- Duplicated a bullet prefab:</p>
+<p>
+	&nbsp; &nbsp; &nbsp; &nbsp; Select one of the existing prefab <em>(MFPS -&gt; Content -&gt; Prefabs -&gt; Weapon -&gt; Projectiles </em>-&gt; *, right click -&gt;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Duplicated.</p>
+<p>
+	&nbsp; &nbsp; &nbsp; &nbsp;Then make the changes that you want to this prefab and after this add a new field in bl_ObjectPooling (it is attached in GameManager object in room scenes), in the new field drag the bullet prefab and change the pooled name:</p>
+<p>
+	<img alt="" src="assets/images/image_31.jpg" style="width: 464px; height: 312px;"></p>
+<p>
+	then open a player prefab and select the <strong>FPWeapon </strong>that you want assign the bullet, in the <strong>bl_Gun </strong>script of that weapon, write the pooled name of the bullet in the field &quot;Bullet&quot;.</p>
+<p>
+	<img alt="" src="assets/images/image_22.jpg" style="width: 450px; height: 440px;"></p>
+<p>
+	Apply changes to the player prefab and ready.</p>
+</section>
+<section id="kit_system">
+	<div class="page-header"><h3>Kit System</h3><hr class="notop"></div>
+<p>	MFPS have a simple but functional &#39;Kit System&#39; where players can pick up Ammunition or Medic kits in the map during the game, for default player can throw 3 kits to pick up with &#39;J&#39; or &#39;H&#39; key, the kit depent of the player class.</p>
+<p>	&nbsp;</p>
+<p>	<img alt="" src="assets/images/image_21.png" style="width: 479px; height: 265px;"></p>
+<h3>
+	<strong>Change the Key to throw kits:</strong></h3>
+<p>	- in the root of player prefabs (in Resources folder) you have a script called &#39;bl_ThrowKits&quot; there you have thow Key propierties called &#39;MedKitKey&#39; and &#39;AmmoKey&#39; there you can set the key for throw each kit.</p>
+<p>	&nbsp;</p>
+<h3>
+	Change the model of the kits:</h3>
+<p>	<img alt="" src="assets/images/image_24.png" style="width: 445px; height: 258px;"></p>
+<p>	- You can find the kits prefabs in:<em> MFPS -&gt; Content -&gt; Prefabs -&gt; Other -&gt; *</em></p>
+<p>	- Select the kit that you want change the model (MedKit or AmmoKit) and drag to the scene hierarchy.</p>
+<p>	- Replace the mesh with you new model and save the prefab.</p>
+<p>	&nbsp;</p>
+<h3>
+	Change the model of Kit deploy indicator:</h3>
+<p>	<img alt="" src="assets/images/image_19.png" style="width: 139px; height: 120px;"></p>
+<p>	- You can find the prefab in MFPS -&gt; Content -&gt; Prefabs -&gt; Other -&gt; KitDeployIndicator</p>
+</section>
+<section id="kill_zones">
+	<div class="page-header"><h3>Kill Zones</h3><hr class="notop"></div>
+<p>	may be the case that there are limits in your map that you want the players not to go any further, to make sure that if the player enters one of these limits MFPS has &#39;Kill Zones&#39; where if the player enters he will receive a instant kill returning it to a reappearance point.</p>
+<p>	<img alt="" src="assets/images/image_29.png" style="width: 920px; height: 350px;"></p>
+<p>	&nbsp;</p>
+<p>	to add a kill zone simple add a object with a &#39;Box Collider&#39; where the Box Collider represent the zone where detect if the player is in the kill zone, then add the script bl_DeathZone.cs script, setup the time that the player have to leave this zone and the string message that will appear in screen while player is in kill zone.</p>
+</section>
+<section id="add_new_menu">
+	<div class="page-header"><h3>Add new menu</h3><hr class="notop"></div>
+<p>	if you want add a new menu in lobby UI, follow this:&nbsp;</p>
+<p>	1 - Create the menu UI: make the design of UI with what you need, but make all the design as child of a parent under canvas, example &quot;GameNews&quot; (this is a empty game object under canvas) put all the buttons, text, images, etc.. of your new menu under this object.</p>
+<p>	2 - Add the &quot;GameNews&quot; object (that contains your new menu designs) in bl_Lobby -&gt; MenusUI, add a new field in this list and add the &quot;GameNews&quot; object in the field.</p>
+<p>	3 - Create a menu button, add a new button that will open the new menu window, all the other buttons are in: Lobby -&gt; Canvas -&gt; Lobby -&gt; MainMenu -&gt; *, so you can duplicate one of these buttons and change the title text.</p>
+<p>	in this new button add as listener the function of bl_Lobby -&gt; ChangeWindow(int) -&gt; and in the int variable set the index of new window in the list &quot;MenuUI&quot;.</p>
+<p>	&nbsp;</p>
+</section>
+<section id="friend_list">
+	<div class="page-header"><h3>Friend List</h3><hr class="notop"></div>
+<p>	Friend List is a Photon Feature that allow to players add friends in game and know some states about then like when is online or when is in a room, this feature was implemented in MFPS 2.0 version r1.0, due this mostly is a server side logic, this is a final system (no improved on it) all that can be do it with it has been done.</p>
+<p>	&nbsp;</p>
+<p>	<strong>Usage:</strong></p>
+<p>	When players are in Lobby they can open the Friend List with the bottom left button &quot;Friends&quot;, they can add a new friend simple with writte the name of the player in the input field, due it is one-way follower concept, not a mutual acceptance between players.</p>
+<p>	&nbsp;</p>
+<p>	For default upto 25 player can be added, you can increase this limit in (Lobby scene) Lobby -&gt; bl_FriendList -&gt; MaxFriendsCount</p>
+</section>
+<section id="kick_vote">
+	<div class="page-header"><h3>Kick Vote</h3><hr class="notop"></div>
+<h2>
+	Kick Vote</h2>
+<p>	This feature allow players start a vote to kick a specific player from the current room, before only master client could kick players, now player simple need select the user from the scoreboard and click on Kick button to start the request.</p>
+<p>	<strong>Vote Keys:</strong></p>
+<p>	For default the keys to vote are: F1 for Yes and F2 for No, you can change these in (Map Scene) -&gt; GameManager -&gt; bl_KickVotation -&gt; YesKey - NoKey</p>
+<p>	&nbsp;</p>
+<p>	&nbsp;</p>
+</section>
+<section id="mobile">
+	<div class="page-header"><h3>Mobile </h3><hr class="notop"></div>
+<p>	If you are targeting to export in mobile platforms, you need some things to do before due MFPS 2.0 for default is not optimize for mobile platforms and also don&#39;t have mobile control for default,</p>
+<p>	So first thing you need is Mobile Control,&nbsp;for this there is already an addon specifically for MFPS 2.0, which contains all the necessary buttons, but also you can integrate your prefer system if you want.</p>
+<p>	Then you can start to made the optimization work, you should remove the Post-Process effects, you can do it simple remove the script from the Main Camera of player prefabs, MFPS 2.0 disable some systems when is on mobile platforms like weapon smooth movement.</p>
+<p>	One of most import thing to do is modify the texture quality, for mobile the maximun size of a image should be 512, more information for mobile optimization can be found here:&nbsp;<a href="https://docs.unity3d.com/Manual/MobileOptimizationPracticalGuide.html">https://docs.unity3d.com/Manual/MobileOptimizationPracticalGuide.html</a></p>
+</section>
+<section id="language">
+	<div class="page-header"><h3>Language</h3><hr class="notop"></div>
+<div>
+	You may want&nbsp; change the language of text in game or maybe just change the text grammar, the mayor part of text is in the UI Text&#39;s components inside the canvas objests but also there are some text that are write by script, to facility you find all these script we have put all those in just 1 script &quot;bl_GameText.cs&quot;.</div>
+<div>
+	&nbsp;</div>
+<div>
+	in this script you will find all the text that are send by script, you can change of language or change grammar,&nbsp;this facilitates the work of for example adding your own location system.</div>
+</section>
+<section id="postprocessing">
+	<div class="page-header"><h3>PostProcessing</h3><hr class="notop"></div>
+<p>	MFPS using the new Unity post-processing stack for image effects, these give a AAA graphic aspect to the game but also a considerable&nbsp;spending in graphic resources, so use it depent of your criteria and the destination platform, PC and console platforms normally can handle with it, but the mayor mobile devices will have problems so is not recommeded use for it.</p>
+<p>	<img alt="" src="assets/images/image_2.jpg"  ></p>
+<h3>
+	Disable Post Processing:</h3>
+<p>	Drag player prefabs located in the Resources folder in the scene hierarchy.</p>
+<p>	Go to the Main Camera of player prefab (Player -&gt; Heat -&gt; Mouse -&gt; Animations -&gt; MainCamera)</p>
+<p>	There you have a script called &quot;PostProcessingBehaviour&quot; (for default), order to remove the effects simple remove this script and save the player prefab, removing it will prevent to compile the dependencies in the build = reduce file size.</p>
+<p>	&nbsp;</p>
+<h3>
+	<strong>Set up Effects:</strong></h3>
+<p>	If you want modify the effects of player camera, go to MFPS -&gt; Content -&gt; Prefabs -&gt; Effects -&gt;&nbsp;PlayerProfile</p>
+<p>	there you have all the post processing effects, you can enable or disable, although some effects can active /desactive in the setting menu in game,</p>
+<p>	you can see the changes in real time, play in editor and modify in inspector (while play) or instance a player prefab in hierarchy.</p>
+</section>
+<section id="add_ons">
+	<div class="page-header"><h3>Add ons</h3><hr class="notop"></div>
+<p>
+	MFPS 2.0 have a bunch of features on core, but still missing some important features that almost all FPS have like e.g.: Mini Map, Login System, Level System, Localization, etc... if I tell you that MFPS have all these? yes MFPS have extensions / add ons with which you can integrate all these features.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>you may wonder why they are not added by default?</strong></p>
+<p>
+	basically it is to maintain a relatively low price for the main core package, if all the addons are added by default the price of the package would rise to at least $250.00 for being a complete set,&nbsp;so we decided to add the essential features to the core and let developers choose which extra extensions they want to integrate.</p>
+<p>
+	You can purchase these addons and import the package in the MFPS 2.0 project, there is the list of available add ons for MFPS 2.0:</p>
+<hr>
+<h2>
+	ULogin Pro</h2>
+<p>
+	- This is a must have extension if you develop a serious game, with this players will can create account for authenticated and save they statistics like kill, deaths, score, play time,etc.. also with this you will can ban players (by IP) for prevent to play again, also comes with a Ranking where you can display the Top 10, Top 100 Top 1000, etc... an Admin panel where you can see some statistics of game.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/network/ulogin-pro/">https://www.lovattostudio.com/en/shop/network/ulogin-pro/</a></p>
+<hr>
+<h2>
+	Mobile Control</h2>
+<p>
+	-&nbsp;&nbsp;this add on have all necessary for control input of MFPS 2.0 in mobile platforms, using the standard touches controls of FPS games allowing gameplay on current-gen iOS and Android devices.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/mfps-mobile-control/">https://www.lovattostudio.com/en/shop/addons/mfps-mobile-control/</a></p>
+<hr>
+<h2>
+	<strong>Class Customization</strong></h2>
+<p>
+	&nbsp;-&nbsp;allows the player to set personalized way weapons of each class (primary, secondary, Knife and grenade) in run time using a dedicated menu.</p>
+<p>
+	Link:&nbsp;<a href="http://https://www.lovattostudio.com/en/shop/addons/class-cutomization/">http://https://www.lovattostudio.com/en/shop/addons/class-cutomization/</a></p>
+<hr>
+<h2>
+	<strong>Customizer</strong></h2>
+<p>
+	&nbsp;- Allow players to change the attachments of weapons in a menu, they can change things like: Iron Sight, Suppressor,&nbsp; Magazine, etc... changes will be visible in the network gun too.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/customizer/">https://www.lovattostudio.com/en/shop/addons/customizer/</a></p>
+<hr>
+<h2>
+	Kill Streak Notifier</h2>
+<p>
+	- Show a icon for each kill, a different icon for each kill in a streak, also with a voice sound that will noticy the player the state of hes streak, the icon is showing with a UI Animation and hide automatically after a certain seconds.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/kill-streak-notifier/">https://www.lovattostudio.com/en/shop/addons/kill-streak-notifier/</a></p>
+<hr>
+<h2>
+	Localization</h2>
+<p>
+	- Localization allows to developers add many translation of the game as they want and to players be comfortable playing the game in their language, with this add-on locate the game is simple, you can add many languages as you want, easy addition of new sentences.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/localization/">https://www.lovattostudio.com/en/shop/addons/localization/</a></p>
+<hr>
+<h2>
+	HUD Waypoint</h2>
+<p>
+	-&nbsp;It is an easy but functional player navigation and indicator, based on UI system, you can show a UI that follow a object in the map, so players can be guided or know where is some object such as: ammunition or health.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/hud-waypoint-add/">https://www.lovattostudio.com/en/shop/addons/hud-waypoint-add/</a></p>
+<hr>
+<h2>
+	Player Selector</h2>
+<p>
+	- MFPS 2.0 for default have only 2 players (1 for team) with this addons you can add the avility for players can select the player wich why they want play so you can add much players models as you want, enables a menu to select the player you want to play with, after selecting the team (in game modes per team) a menu appears to select the player model.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/player-selector/">https://www.lovattostudio.com/en/shop/addons/player-selector/</a></p>
+<hr>
+<h2>
+	Input Manager</h2>
+<p>
+	- if you develop for Window, Mac or Linux this is a must have addons,&nbsp;enabling the the ability to change the Keys in game by a Menu (UGUI) with all the keys and their functions, giving comfort to the player to choose the keys best suit for game functions.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/input-manager-addons/">https://www.lovattostudio.com/en/shop/addons/input-manager-addons/</a></p>
+<hr>
+<h2>
+	Bomb Defuse (Game Mode)</h2>
+<p>
+	- with this addons you add the base and functionality of the popular game mode &ldquo;Bomb Defuse / Search And Destroy&quot; game mode system, comes with the basic system ready to play.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/bomb-defuse-search-and-destroy/">https://www.lovattostudio.com/en/shop/addons/bomb-defuse-search-and-destroy/</a></p>
+<hr>
+<h2>
+	Domination (Game Mode)</h2>
+<p>
+	- Add the Domination / Covert Point game mode,&nbsp;where two teams try to dominate most &ldquo;Points or Bases&rdquo; and prevent the opposing team take them or recovers, there are 5 points on the map, teams need covert each one standing 7 seconds on it and prevet that enemy team enter to covert it.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/domination-game-mode-mfps/">https://www.lovattostudio.com/en/shop/addons/domination-game-mode-mfps/</a></p>
+<hr>
+<h2>
+	UGUI MiniMap</h2>
+<p>
+	- Add the mini map system to your game, using UGUI system you can display the minimap in the screen and show the team mates icons also the enemy icons when they shoot.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/gui/ugui-minimap/">https://www.lovattostudio.com/en/shop/gui/ugui-minimap/</a></p>
+<hr>
+<h2>
+	Level System</h2>
+<p>
+	-&nbsp;with this add on you can show the level of player by their score, you can set up all the levels that you want and how much score the player need reach to unlock each level, the package comes with 15 example levels set up with icons but you can add as much as you need, simple to add new levels.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/level-system/">https://www.lovattostudio.com/en/shop/addons/level-system/</a></p>
+<hr>
+<h2>
+	Gun Race (Game Mode)</h2>
+<p>
+	-&nbsp;&nbsp;in a all vs all mode, players upgrade their weapon by eliminating enemies, players win the match begin the first to reached and kill a enemy with the last weapon.</p>
+<p>
+	Link:&nbsp;<a href="https://www.lovattostudio.com/en/shop/addons/gun-race/">https://www.lovattostudio.com/en/shop/addons/gun-race/</a></p>
+</section>
+<section id="faq">
+	<div class="page-header"><h3>FAQ</h3><hr class="notop"></div>
+<p>
+	<em>Will add Vehicle support?</em></p>
+<p>
+	we don&#39;t have plans to add vehicles on MFPS, but we can do as custom job as freelance, just contact us for more information.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<em>You do custom customization (freelance works)?</em></p>
+<p>
+	Yes, but normally we always are working on something so you can ask us with the details of your work and we will answer you&nbsp;if we are available.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<em>Can I use the kit for commercial purposes?</em></p>
+<p>
+	Yes, you can use for commercial purposes as long as you have purchased and downloaded it from Lovatto Studio (Asset Store or lovattostudio.com) and released it as a compiled game (not release source content in any way).</p>
+<p>
+	&nbsp;</p>
+<p>
+	<em>Will there be a Battle Royal mode in MFPS?</em></p>
+<p>
+	I has been working in a personal game that is a FPS Battle Royal for mobiles, I used MFPS as core but I have almost rewrite the half of the system and still not finish, so if in the future I release that mode it will be a independent kit (not add-on) of MFPS, but still not sure if I&#39;ll release it.</p>
+</section>
+<section id="contact">
+	<div class="page-header"><h3>Contact</h3><hr class="notop"></div>
+<p>	If you have any problem, feedback or question with the kit, don&#39;t hesitate in contact us:</p>
+<p>	email: &#108;&#111;&#118;&#97;&#116;&#116;&#111;&#115;&#116;&#117;&#100;&#105;&#111;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</p>
+<p>	forum:&nbsp;<a href="http://www.lovattostudio.com/forum/index.php">http://www.lovattostudio.com/forum/index.php</a></p>
+</section>
+
+
+
+    <hr />
+
+<footer>
+    <p>Copyright Lovatto Studio 2019 made with the <a href="http://rxa.li/documenter">Documenter v2.0</a></p>
+</footer>
+
+</div><!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script>document.createElement('section');var duration='1013',easing='easeInOutQuint';</script>
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-min.js"></script> 
+</body>
+</html>

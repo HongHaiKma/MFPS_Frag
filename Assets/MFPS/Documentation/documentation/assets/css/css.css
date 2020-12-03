@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Khula');
+
+*{
+ font-family: 'Khula', sans-serif;
+ letter-spacing: 1px;
+ color: #fff !import;
+}
+.navbar .nav li a {
+    max-width: 1000px !important;
+}
+.hero-unit {
+    background-color: #0a0a0a !important;
+}
+section {
+    outline-color: yellow;
+    outline-width: 2px;
+}
